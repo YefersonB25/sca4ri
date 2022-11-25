@@ -23,7 +23,7 @@
 
 <div class="card" id="oculto-crear" style="display: none">
     <h3 class="text-center" style="text-decoration: underline">Importar datos</h3>
-    <div class="card-body"> 
+    <div class="card-body">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Profesores colegio</a>
@@ -71,13 +71,13 @@
                 </form>
             </div>
         </div>
-          
+
     </div>
-</div> 
+</div>
 
 <div class="card" id="oculto-crearform" style="display: none">
     <h3 class="text-center" style="text-decoration: underline">Crear Profesor</h3>
-    <div class="card-body">         
+    <div class="card-body">
         <div class="tab-content mt-3" id="myTabContent">
             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                 <div class="card-body">
@@ -109,19 +109,19 @@
                                 Seleccione empresa.
                             </div>
                         </div>
-                    
+
                         <div class="col-md-6" style="margin-top:20px">
                             <label for="validationCustom01" class="form-label nn">Establecimiento</label>
                             <select name="" class="form-control n0" id="validationCustom01" value="" required>
-                                <option value="" placeholder="seleccione..."></option> 
-                            </select> 
+                                <option value="" placeholder="seleccione..."></option>
+                            </select>
 
                             <select name="dane_empresa" style="display: none" class="form-control n1" id="validationCustom04" value="" required>
                                 <option value="">Seleccione...</option>
                                 @foreach ($colegios as $col)
                                     <option value="{{$col->col_dane_colegio}}">{{$col->col_nombre}}</option>
                                 @endforeach
-                            </select> 
+                            </select>
 
                             <select name="dane_empresa" style="display: none" class="form-control n2" id="validationCustom05" value="" required>
                                 <option value="">Seleccione...</option>
@@ -140,9 +140,10 @@
             </div>
         </div>
     </div>
-</div> 
+</div>
+
 <div class="card">
-    <div class="card-body"> 
+    <div class="card-body">
         <table id="example" class="table table-striped table-hover dt-responsive" style="width:100%">
             <thead>
                 <tr>
@@ -193,7 +194,7 @@
             </tfoot>
         </table>
     </div>
-</div>        
+</div>
 
 @endsection
 
@@ -231,8 +232,8 @@
     <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>   
-    
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/responsive.bootstrap5.min.js"></script>
+
     @if(session('mensageimport') == 'ok')
         <script>
             const Toast = Swal.mixin({
@@ -270,12 +271,12 @@
                 'paginate': {
                     'next': "Siguiente",
                     'previous': "Anterior"
-                } 
+                }
             }
 
         });
     </script>
-    
+
     {{-- validacion de creacion --}}
     <script>
 
@@ -313,11 +314,11 @@
 
     <script>
         $("#disparador-crear").click(function() {
-            if( $("#oculto-crear").css("display") == 'none' ) 
+            if( $("#oculto-crear").css("display") == 'none' )
             $("#oculto-crear").show("slow");
             else
             $("#oculto-crear").hide("slow");
-            
+
         });
     </script>
 
@@ -344,11 +345,11 @@
                     } else{
                         $(".n1").hide("slow").prop('required', false).attr('disabled','disabled');
                     }
-                    
+
                 }
                 if($('.tipo_destinon option:selected').val() == 2) {
 
-                    if( $(".n2").css("display") == 'none' ){ 
+                    if( $(".n2").css("display") == 'none' ){
                         $(".n0").hide("slow").prop('required', false).attr('disabled','disabled');
                         $(".n1").hide("slow").prop('required', false).attr('disabled','disabled');
                         $(".n2").show("slow").prop('required', true).removeAttr('disabled');
@@ -368,7 +369,7 @@
                     }
 
                 }
-        
+
         });
 
 
@@ -431,12 +432,12 @@
                                 })
                                     $("#"+id+"").remove(); // you can add name div to remove
                                 }
-                                
+
                             }
                         });
                         window.setTimeout(function(){location.reload()},3000)
                     }
-                } 
+                }
             });
         }
     </script>

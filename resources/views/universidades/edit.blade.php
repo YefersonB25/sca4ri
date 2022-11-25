@@ -47,7 +47,7 @@
                 <div class="input-group has-validation">
                 <select name="tipodocumento" class="form-control" id="validationCustom05" value="" required>
                     <option value="">Seleccione...</option>
-                    
+
                     @foreach ($tipodocumento as $tipodoc)
                         <option value="{{ $tipodoc->tipodoc_nombre }}" @if(old('tipodocumento') == $tipodoc->tipodoc_nombre || $tipodoc->tipodoc_nombre == $universitario->uni_tipodoc) selected @endif>{{ $tipodoc->tipodoc_nombre }}</option>
                     @endforeach
@@ -69,10 +69,10 @@
                 </div>
                 </div>
             </div>
-            
+
             <input type="hidden" name="uni_carreraid" value="{{ $universitario->uni_carreraid }}">
             <input type="hidden" name="uni_semestreid" value="{{ $universitario->uni_semestreid }}">
-            
+
             <div class="col-md-12">
                 <br>
                 <button class="btn btn-success" type="submit">Guardar <i class="fas fa-save"></i></button>
@@ -94,12 +94,12 @@
             background-color: #0b5cb3 !important;
             color: white !important;
         }
-       
+
    </style>
 
 @stop
 
-@section('js')    
+@section('js')
 
     @if(session('mensajedit') == 'ok')
         <script>
@@ -152,10 +152,10 @@
 
     <script type="text/javascript">
         function valideKey(evt){
-            
+
             // code is the decimal ASCII representation of the pressed key.
             var code = (evt.which) ? evt.which : evt.keyCode;
-            
+
             if(code==8) { // backspace.
             return true;
             } else if(code>=48 && code<=57) { // is a number.
